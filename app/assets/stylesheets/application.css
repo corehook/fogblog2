@@ -19,9 +19,12 @@ body {
 /* Let's import the lovely google font, please keep this line at the top of your stylesheet */
 /* Menu CSS */
 #menuholder {
-	position: absolute;
+	
+	
 	top: 100px;
-	left: 260px;
+	right: 100px;
+	left: 100px;
+	
 }
 #cssmenu,
 #cssmenu ul,
@@ -51,12 +54,16 @@ body {
   width: auto;
 }
 #cssmenu ul {
-  background: url(<%= asset_path 'nav-bg.png' %>) repeat-x 0px 4px;
+  background-color: #313131;
   height: 69px;
+
 }
 #cssmenu ul li {
-  float: left;
+  float: right;
   list-style: none;
+  		-moz-box-shadow: inset    0 0 10px #909090;
+   -webkit-box-shadow: inset 0 0 10px #909090;
+   box-shadow: inset 0 0 10px #909090;
 }
 #cssmenu ul li a {
   display: block;
@@ -76,7 +83,7 @@ body {
 }
 #cssmenu ul li a:hover,
 #cssmenu ul li.active a {
-  background: url(<%= asset_path 'color.png' %>) center bottom;
+  background-color: #313131;
   display: block;
   height: 37px;
   margin-top: 0px;
@@ -84,6 +91,9 @@ body {
   color: #004f7c;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.55);
   opacity: 1;
+  		-moz-box-shadow: inset    0 0 15px #ffffff;
+   -webkit-box-shadow: inset 0 0 15px #ffffff;
+   box-shadow: inset 0 0 15px #ffffff;
 }
 /*END NAV*/
 
