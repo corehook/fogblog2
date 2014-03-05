@@ -7,20 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="main">
 <div class="shapka">
-<div id="krug" style="position:absolute; height: 150px; width:150px; top:10px; left: 10px; font-size: 24pt; color: white;">
-
+<div id="krug" style="position:absolute; height: 150px; width:150px; top:10px; left: 100px; font-size: 24pt; color: white;">
 <br><br><br><br>
 &nbsp;Fogblog
-<p>&nbsp;&nbsp;&nbsp;&nbsp;herokuapp.com</p>
-
+<p align="center">herokuapp.com</p>
 </div>
-<div id="krug" style="position: absolute; height: 150px; width:150px; top:10px; left: 180px; font-size: 24pt; color: red;"></div>
+<div id='menuholder'>
+<div id='cssmenu'>
+<ul>
+   <li class='active'><a href='home'><span>Home</span></a></li>
+   <li><a href='help'><span>Help</span></a></li>
+   <li><a href='about'><span>About</span></a></li>
+   <li class='contacts'><a href='contacts'><span>Contact</span></a></li>
+</ul>
+</div>
+</div>
+
+
+</div></div>
 <div class="content">
 <%= yield %>
 </div>
 <div class="footer">
-<p align="center"><h1>fogfreek@gmail.com</h1></p>
+<p align="center">fogfreek@gmail.com</p>
+</div>
 </div>
 </body>
 </html>
