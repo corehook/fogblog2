@@ -1,0 +1,12 @@
+// Place all the styles related to the CreatePost controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#newpost {
+	position: related;
+	padding: 20px;
+	border-color: blue;
+	border-style: groove;
+	height: 50%;
+	width: 60%;
+	max-width: 100%;
+}

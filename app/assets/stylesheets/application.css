@@ -116,7 +116,7 @@ body {
    box-shadow:         inset 0 0 20px #ffffff;
    transition: width 0.5s ease-in-out;
    transition-delay: 1s;
-   background-image: <%= image_path("bg-clouds.png")%>;
+  color: white;
   background-position: 0px 0px;
   background-repeat: repeat-x;
 
@@ -170,18 +170,4 @@ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, 
 background-image: -moz-linear-gradient(top, rgba(2,78,116,1) 0%, rgba(1,40,59,1) 50%, rgba(0,2,3,1) 100%);
 /* for Opera 11.1+ */
 background-image: -o-linear-gradient(top, rgba(2,78,116,1) 0%, rgba(1,40,59,1) 50%, rgba(0,2,3,1) 100%);
-}
-
-@keyframes animatedBackground {
-  from { background-position: 0 0; }
-  to { background-position: 100% 0; }
-}
-#animate-area { 
-  width: 560px; 
-  height: 400px; 
-  background-image: image_tag("bg-clouds.png");
-  background-position: 0px 0px;
-  background-repeat: repeat-x;
-
-  animation: animatedBackground 40s linear infinite;
 }

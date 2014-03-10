@@ -1,9 +1,18 @@
 Fogblog::Application.routes.draw do
+  devise_for :users
+  get "persons/profile", as: 'user_root'
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
   get "static_pages/contacts"
-  resources :microposts
+
+  get "create_post/index"
+  get "create_post/show"
+  get "create_post/preview"
+  get "create_post/publish"
+  get "create_post/save"
+
+  
 
   resources :users
 
@@ -13,7 +22,7 @@ Fogblog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root to: 'welcome#index'
-
+   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
