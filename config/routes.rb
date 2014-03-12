@@ -4,14 +4,14 @@ Fogblog::Application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contacts', to: 'static_pages#contacts', via: 'get'
   match '/profile', to: 'persons#profile', as: 'user_root', via: 'get'
-  match '/logout', to: 'devise/sessions#destroy', via: 'get'
+
 
   devise_for :users, :path => '', :path_names => {:sign_up => 'signup', :sign_in => 'login', :sign_out => 'logout'}
   devise_scope :user do get "/signup" => "devise/registrations#new"
   end
-  devise_scope :user do get "/logout" => "devise/sessions#destroy"
+  devise_scope :user do get "/login" => "devise/sessions#new"
   end
-    devise_scope :user do get "/login" => "devise/sessions#new"
+  devise_scope :user do get "/logout" => "devise/sessions#destroy"
   end
   
   get "create_post/index"
