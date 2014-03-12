@@ -1,64 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="main">
-<div class="shapka">
-
-<div id="krug" style="position:absolute; height: 63px; width:150px; top:0px; left: 50px; font-size: 20pt; color: white;">
-<div id="search" style="position:absolute; height: 63px; width:150px; top:0px; left: 250px; font-size: 16pt; color: white;">
-	<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-</div>
-
-<p align="center" style="font-size:24pt;">Fogblog</p>
-
-</div>
-<div>
-</div>
-<div id='menuholder'>
-<div id='cssmenu'>
-<ul>
-   <li class='active'><a href='/static_pages/home'><span>Home</span></a></li>
-   <li><a href='/static_pages/help'><span>Help</span></a></li>
-   <li><a href='/static_pages/about'><span>About</span></a></li>
-   <li class='contacts'><a href='/static_pages/contacts'><span>Contact</span></a></li>
-</ul>
-</div>
-<div id="krug">
-	<p align="center">
-<% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-<% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %>
-	</p>
-
-	</div>
-</div>
-<div style="position: fixed; left: 5px; top: 100px;">
-	<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-	</div>
-
-
-</div></div>
-<div class="content">
-<%= yield %>
-<!--<%= image_tag("bg-clouds.png") %>-->
-</div>
-<div class="footer">
-<p align="center">fogfreek@gmail.com</p>
-</div>
-</div>
-</body>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim'%>
+  </head>
+  <body>
+    <div class="block">
+    <%= render 'layouts/header' %>
+    
+    <div class="container">
+      <%= yield %>
+    <%= render 'layouts/footer' %>
+    </div>
+  </div>
+  </body>
 </html>

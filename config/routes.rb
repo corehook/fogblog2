@@ -1,11 +1,13 @@
 Fogblog::Application.routes.draw do
-  devise_for :users
-  get "persons/profile", as: 'user_root'
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
-  get "static_pages/contacts"
+  
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/about', to: 'static_pages#about', via: 'get'
+  match '/contacts', to: 'static_pages#contacts', via: 'get'
+  match '/profile', to: 'persons#profile', as: 'user_root', via: 'get'
+  match '/logout', to: 'devise/sessions#destroy', via: 'get'
+  devise_for :users, :path => '', :path_names => {:sign_up => 'signup', :sign_in => 'login', :sign_out => 'logout'}
 
+  
   get "create_post/index"
   get "create_post/show"
   get "create_post/preview"
@@ -14,14 +16,11 @@ Fogblog::Application.routes.draw do
 
   
 
-  resources :users
-
-  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root to: 'welcome#index'
+   root to: 'static_pages#home'
    
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
