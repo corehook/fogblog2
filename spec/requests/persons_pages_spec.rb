@@ -10,6 +10,6 @@ describe "PersonsPages" do
 	describe "login page" do
 		before { visit login_path }
 		it { should have_content('Sign in') }
-		it { should have_title(full_title('')) }
+		it { should have_title(full_title('login')) }
 	end
 end
