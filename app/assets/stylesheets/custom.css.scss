@@ -6,16 +6,17 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 45px;
 
   background: #f2f0e3;  
  .block {
     background: image-url("bg-chip-l.png") repeat-y,
                 #fff image-url("bg-chip-r.png") repeat-y 100% 0; 
-   
-   }
+   position: relative;
+    }
 
 }
+
 
 section {
   overflow: auto;
@@ -120,3 +121,23 @@ ul {
 }
 }
 }
+
+.avatar {
+    background: #E0E0E0;
+    height: 220px;
+    width: 200px;
+    border: 2px solid black;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+      
+  #avatar_ctrl  {
+  position: absolute;
+  background: image-url("avatarctrlbg.png") repeat-x;
+  bottom: -100px;
+  right: 0px;
+  left: 0px;
+  padding: 10px;
+  }
+
+      }

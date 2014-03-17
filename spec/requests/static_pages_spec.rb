@@ -10,10 +10,8 @@ it "should have the right links on the layout" do
   click_link "Contact"
   expect(page).to have_title(full_title('Contacts'))
   click_link "Home"
-  click_link "Sign up now!"
-  expect(page).to have_title(full_title('Sign Up'))
   click_link "sample app"
-  expect(page).to have_title(base_title)
+  expect(page).to have_title(full_title(''))
 end
 shared_examples_for "all static pages" do
   it { should have_selector('h1', text: heading) }
